@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "query": "top 5 horror movies in 2022",
+      "expected_genre": "horror",
+      "expected_year": 2022
+    },
+    {
+      "query": "romantic movies from france",
+      "expected_genre": "romance",
+      "expected_country": "france"
+    },
+    {
+      "query": "comedy movies before 2010",
+      "expected_genre": "comedy"
+    }
+  ]
+}

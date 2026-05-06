@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "query": "top 5 horror movies from japan in 2022",
+      "expected": {
+        "genre": "horror",
+        "country": "japan",
+        "year": 2022
+      }
+    },
+    {
+      "query": "romantic movies from france",
+      "expected": {
+        "genre": "romance",
+        "country": "france"
+      }
+    },
+    {
+      "query": "movies with tom cruise",
+      "expected": {
+        "person": "tom cruise"
+      }
+    }
+  ]
+}

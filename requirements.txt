@@ -1,0 +1,6 @@
+streamlit             → builds the web app interface
+pandas                → handles and filters movie data
+numpy                 → supports numerical operations
+sentence-transformers → creates text embeddings (AI features)
+faiss-cpu             → enables fast similarity search
+ollama                → runs local AI models (like Mistral)
