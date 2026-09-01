@@ -1,0 +1,7 @@
+[
+    {
+        "query": "suggest me top 5 horror films which are released after the year 2024",
+        "type": "rag",
+        "response": " I'm sorry for any confusion, but as of my last update, I don't have real-time capabilities to provide recommendations for movies that have not been released yet. However, I can recommend some highly acclaimed and popular modern horror films that you might enjoy:\n\n1. Hereditary (2018) - A family undergoes traumatic circumstances after the death of their matriarch.\n2. Midsommar (2019) - A couple travels to Sweden to visit a rural folklore festival that descends into horror.\n3. Us (2019) - A family is haunted by their doppelgangers in this chilling Jordan Peele film.\n4. The Conjuring 2 (2016) - Paranormal investigators Ed and Lorraine Warren help a single mother seeking to rid her family of malevolent spirits.\n5. A Quiet Place (2018) - In a post-apocalyptic world, a family must navigate their lives in silence to avoid mysterious creatures that hunt by sound."
+    }
+]
