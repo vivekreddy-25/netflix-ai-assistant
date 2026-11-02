@@ -5,7 +5,7 @@ Netflix AI Assistant is a hybrid AI-powered movie retrieval system that allows u
 The system combines:
 
 -  Fast structured filtering using Pandas
--  Semantic retrieval using RAG (FAISS + embeddings)
+-  Semantic retrieval for free-form queries using RAG (FAISS + embeddings)
 
 ---
 
@@ -22,8 +22,7 @@ The system combines:
 - Exact year filtering
 - Smart actor/director matching
 - Evaluation dashboard
-- Fast response time
-- RAG-ready architecture
+- Semantic fallback for queries without structured filters
 
 ---
 
@@ -33,26 +32,20 @@ The system combines:
 User Query
     ↓
 Parser
-    ↓
-Structured Parameters
-    ↓
-Query Engine
-    ↓
-Movie Results
+    ├── Structured parameters → Pandas query engine → Movie results
+    └── No structured parameters → FAISS semantic retrieval → Text matches
 ```
 
-Optional semantic queries use:
-
-```text
-Embeddings → FAISS → RAG Retrieval
-```
+The first semantic query builds a FAISS index over the full dataset and saves it
+under `vectorstore/`. Indexing can take several minutes depending on hardware;
+later queries reuse the local index.
 
 ---
 
 #  Project Structure
 
 ```text
-netflixagent/
+netflix-ai-assistant/
 │
 ├── data/
 ├── evaluation/
@@ -66,6 +59,16 @@ netflixagent/
 ├── README.md
 └── pyproject.toml
 ```
+
+---
+
+# Dataset
+
+The [Movies_dataset.csv](https://raw.githubusercontent.com/vivekreddy-25/netflix-ai-assistant/main/data/Movies_dataset.csv)
+file is about 7.8 MB and can be downloaded directly. The repository does not
+record the dataset's upstream source or license, so its redistribution terms
+could not be verified. Check the original source's terms before reusing or
+redistributing the data.
 
 ---
 
@@ -92,6 +95,9 @@ The project includes an evaluation dashboard to measure:
 - Accuracy
 - Query success rate
 - Average response time
+
+Cases are read from `evaluation/test_cases.json`; each evaluation run writes its
+summary and per-query results to `evaluation/results.json`.
 
 ---
 

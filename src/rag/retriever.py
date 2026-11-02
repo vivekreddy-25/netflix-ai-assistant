@@ -6,15 +6,12 @@ import os
 from src.rag.embedder import embed_texts, embed_query
 from src.rag.chunker import chunk_text
 
-INDEX_FILE = "vectorstore/faiss_index.bin"
-TEXTS_FILE = "vectorstore/texts.pkl"
+INDEX_FILE = "vectorstore/faiss_index_full.bin"
+TEXTS_FILE = "vectorstore/texts_full.pkl"
 
 
 def build_index(df):
     print("Building FAISS index...")
-
-    # LIMIT DATA FOR SPEED
-    df = df.head(1000)
 
     texts = []
 
@@ -52,8 +49,11 @@ def load_index():
 
 
 def retrieve(index, texts, query, k=5):
+    if index.ntotal == 0:
+        return []
+
     query_vec = embed_query(query)
 
-    distances, indices = index.search(np.array([query_vec]), k)
+    _, indices = index.search(np.array([query_vec]), min(k, index.ntotal))
 
-    return [texts[i] for i in indices[0]]
+    return [texts[i] for i in indices[0] if 0 <= i < len(texts)]

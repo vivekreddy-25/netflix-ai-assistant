@@ -25,7 +25,12 @@ def query_movies(
     # -------- GENRE --------
     if genre:
         results = results[
-            results['genres'].str.contains(genre)
+            results['genres'].str.contains(
+                genre,
+                case=False,
+                na=False,
+                regex=False
+            )
         ]
 
     # -------- COUNTRY --------
@@ -37,14 +42,29 @@ def query_movies(
     # -------- PERSON SEARCH (ACTOR OR DIRECTOR) --------
     if actor:
         results = results[
-            results['cast'].str.contains(actor) |
-            results['director'].str.contains(actor)
+            results['cast'].str.contains(
+                actor,
+                case=False,
+                na=False,
+                regex=False
+            ) |
+            results['director'].str.contains(
+                actor,
+                case=False,
+                na=False,
+                regex=False
+            )
         ]
 
     # -------- DIRECTOR --------
     if director:
         results = results[
-            results['director'].str.contains(director)
+            results['director'].str.contains(
+                director,
+                case=False,
+                na=False,
+                regex=False
+            )
         ]
 
     return results.head(limit)

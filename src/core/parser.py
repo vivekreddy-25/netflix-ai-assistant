@@ -1,5 +1,33 @@
 import re
 
+
+GENRES = {
+    "horror": "horror",
+    "romantic": "romance",
+    "romance": "romance",
+    "comedy": "comedy",
+    "action": "action",
+    "drama": "drama",
+    "thriller": "thriller",
+    "sci-fi": "science fiction",
+    "science fiction": "science fiction",
+    "animation": "animation",
+    "animated": "animation",
+    "adventure": "adventure",
+    "crime": "crime",
+    "documentary": "documentary",
+    "family": "family",
+    "fantasy": "fantasy",
+    "history": "history",
+    "music": "music",
+    "mystery": "mystery",
+    "tv movie": "tv movie",
+    "tv movies": "tv movie",
+    "war": "war",
+    "western": "western",
+}
+
+
 def parse_query(user_query, all_countries):
 
     query = user_query.lower()
@@ -14,21 +42,10 @@ def parse_query(user_query, all_countries):
         "limit": 5
     }
 
-    # -------- GENRE --------
-    if "horror" in query:
-        data["genre"] = "horror"
-
-    elif "romance" in query or "romantic" in query:
-        data["genre"] = "romance"
-
-    elif "comedy" in query:
-        data["genre"] = "comedy"
-
-    elif "action" in query:
-        data["genre"] = "action"
-
-    elif "drama" in query:
-        data["genre"] = "drama"
+    for word, genre in GENRES.items():
+        if re.search(rf"\b{re.escape(word)}\b", query):
+            data["genre"] = genre
+            break
 
     # -------- YEAR --------
     year_match = re.search(r"\b(19|20)\d{2}\b", query)
@@ -57,6 +74,15 @@ def parse_query(user_query, all_countries):
 
     if person_match:
         data["actor"] = person_match.group(2).strip()
+
+    director_match = re.search(
+        r"\bdirected by\s+([a-z\s]+?)(?:\s+in\b|\s+from\b|\s+after\b|\s+before\b|[?.!,;:]|$)",
+        query
+    )
+
+    if director_match:
+        data["director"] = director_match.group(1).strip()
+        data["actor"] = None
 
     # -------- LIMIT --------
     limit_match = re.search(

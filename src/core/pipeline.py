@@ -1,3 +1,5 @@
+from functools import lru_cache
+
 from src.core.ingest import load_data
 from src.core.query_engine import query_movies
 from src.core.parser import parse_query
@@ -18,8 +20,28 @@ for country_list in df['country']:
 # -----------------------------
 # MAIN PIPELINE
 # -----------------------------
+@lru_cache(maxsize=1)
+def _load_rag_index():
+    from src.rag.retriever import build_index, load_index
+
+    index, texts = load_index()
+    if index is None:
+        index, texts = build_index(df)
+
+    return index, texts
+
+
 def run_pipeline(user_query):
     params = parse_query(user_query, all_countries)
+
+    if not any(
+        params.get(key)
+        for key in ("genre", "year", "country", "actor", "director")
+    ):
+        from src.rag.retriever import retrieve
+
+        index, texts = _load_rag_index()
+        return "\n".join(retrieve(index, texts, user_query, k=5))
 
     results = query_movies(
         df,

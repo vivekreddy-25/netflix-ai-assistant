@@ -1,18 +1,194 @@
 {
-  "tests": [
+  "results": [
     {
       "query": "top 5 horror movies in 2022",
-      "expected_genre": "horror",
-      "expected_year": 2022
+      "expected": {
+        "genre": "horror",
+        "year": 2022
+      }
     },
     {
       "query": "romantic movies from france",
-      "expected_genre": "romance",
-      "expected_country": "france"
+      "expected": {
+        "genre": "romance",
+        "country": "france"
+      }
     },
     {
-      "query": "comedy movies before 2010",
-      "expected_genre": "comedy"
+      "query": "comedy movies before 2015",
+      "expected": {
+        "genre": "comedy",
+        "year": 2015,
+        "year_filter": "before"
+      }
+    },
+    {
+      "query": "movies with tom cruise",
+      "expected": {
+        "person": "tom cruise"
+      }
+    },
+    {
+      "query": "movies directed by christopher nolan in 2014",
+      "expected": {
+        "director": "christopher nolan",
+        "year": 2014
+      }
+    },
+    {
+      "query": "movies after 2024",
+      "expected": {
+        "year": 2024,
+        "year_filter": "after"
+      }
+    },
+    {
+      "query": "action movies in 2023",
+      "expected": {
+        "genre": "action",
+        "year": 2023
+      }
+    },
+    {
+      "query": "drama movies in 2016",
+      "expected": {
+        "genre": "drama",
+        "year": 2016
+      }
+    },
+    {
+      "query": "thriller movies in 2024",
+      "expected": {
+        "genre": "thriller",
+        "year": 2024
+      }
+    },
+    {
+      "query": "sci-fi movies in 2017",
+      "expected": {
+        "genre": "science fiction",
+        "year": 2017
+      }
+    },
+    {
+      "query": "animation movies from japan",
+      "expected": {
+        "genre": "animation",
+        "country": "japan"
+      }
+    },
+    {
+      "query": "crime movies in 2018",
+      "expected": {
+        "genre": "crime",
+        "year": 2018
+      }
+    },
+    {
+      "query": "adventure movies in 2018",
+      "expected": {
+        "genre": "adventure",
+        "year": 2018
+      }
+    },
+    {
+      "query": "family movies in 2021",
+      "expected": {
+        "genre": "family",
+        "year": 2021
+      }
+    },
+    {
+      "query": "fantasy movies in 2022",
+      "expected": {
+        "genre": "fantasy",
+        "year": 2022
+      }
+    },
+    {
+      "query": "documentary movies in 2025",
+      "expected": {
+        "genre": "documentary",
+        "year": 2025
+      }
+    },
+    {
+      "query": "mystery movies in 2022",
+      "expected": {
+        "genre": "mystery",
+        "year": 2022
+      }
+    },
+    {
+      "query": "war movies in 2019",
+      "expected": {
+        "genre": "war",
+        "year": 2019
+      }
+    },
+    {
+      "query": "history movies in 2018",
+      "expected": {
+        "genre": "history",
+        "year": 2018
+      }
+    },
+    {
+      "query": "music movies in 2025",
+      "expected": {
+        "genre": "music",
+        "year": 2025
+      }
+    },
+    {
+      "query": "western movies in 2016",
+      "expected": {
+        "genre": "western",
+        "year": 2016
+      }
+    },
+    {
+      "query": "tv movies in 2015",
+      "expected": {
+        "genre": "tv movie",
+        "year": 2015
+      }
+    },
+    {
+      "query": "movies from united kingdom in 2020",
+      "expected": {
+        "country": "united kingdom",
+        "year": 2020
+      }
+    },
+    {
+      "query": "top 3 animation movies in 2021",
+      "expected": {
+        "genre": "animation",
+        "year": 2021
+      }
+    },
+    {
+      "query": "movies with steven spielberg",
+      "expected": {
+        "person": "steven spielberg"
+      }
+    },
+    {
+      "query": "romance movies after 2020",
+      "expected": {
+        "genre": "romance",
+        "year": 2020,
+        "year_filter": "after"
+      }
+    },
+    {
+      "query": "horror movies before 2016",
+      "expected": {
+        "genre": "horror",
+        "year": 2016,
+        "year_filter": "before"
+      }
     }
   ]
 }

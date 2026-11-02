@@ -1,25 +1,169 @@
 {
+  "accuracy": 100.0,
+  "passed": 27,
+  "total": 27,
   "results": [
     {
-      "query": "top 5 horror movies from japan in 2022",
-      "expected": {
-        "genre": "horror",
-        "country": "japan",
-        "year": 2022
-      }
+      "query": "top 5 horror movies in 2022",
+      "success": true,
+      "time_sec": 0.006,
+      "status": "PASS"
     },
     {
       "query": "romantic movies from france",
-      "expected": {
-        "genre": "romance",
-        "country": "france"
-      }
+      "success": true,
+      "time_sec": 0.009,
+      "status": "PASS"
+    },
+    {
+      "query": "comedy movies before 2015",
+      "success": true,
+      "time_sec": 0.006,
+      "status": "PASS"
     },
     {
       "query": "movies with tom cruise",
-      "expected": {
-        "person": "tom cruise"
-      }
+      "success": true,
+      "time_sec": 0.011,
+      "status": "PASS"
+    },
+    {
+      "query": "movies directed by christopher nolan in 2014",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "movies after 2024",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "action movies in 2023",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "drama movies in 2016",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "thriller movies in 2024",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "sci-fi movies in 2017",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "animation movies from japan",
+      "success": true,
+      "time_sec": 0.007,
+      "status": "PASS"
+    },
+    {
+      "query": "crime movies in 2018",
+      "success": true,
+      "time_sec": 0.006,
+      "status": "PASS"
+    },
+    {
+      "query": "adventure movies in 2018",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "family movies in 2021",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "fantasy movies in 2022",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "documentary movies in 2025",
+      "success": true,
+      "time_sec": 0.004,
+      "status": "PASS"
+    },
+    {
+      "query": "mystery movies in 2022",
+      "success": true,
+      "time_sec": 0.004,
+      "status": "PASS"
+    },
+    {
+      "query": "war movies in 2019",
+      "success": true,
+      "time_sec": 0.004,
+      "status": "PASS"
+    },
+    {
+      "query": "history movies in 2018",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "music movies in 2025",
+      "success": true,
+      "time_sec": 0.004,
+      "status": "PASS"
+    },
+    {
+      "query": "western movies in 2016",
+      "success": true,
+      "time_sec": 0.004,
+      "status": "PASS"
+    },
+    {
+      "query": "tv movies in 2015",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "movies from united kingdom in 2020",
+      "success": true,
+      "time_sec": 0.005,
+      "status": "PASS"
+    },
+    {
+      "query": "top 3 animation movies in 2021",
+      "success": true,
+      "time_sec": 0.004,
+      "status": "PASS"
+    },
+    {
+      "query": "movies with steven spielberg",
+      "success": true,
+      "time_sec": 0.009,
+      "status": "PASS"
+    },
+    {
+      "query": "romance movies after 2020",
+      "success": true,
+      "time_sec": 0.006,
+      "status": "PASS"
+    },
+    {
+      "query": "horror movies before 2016",
+      "success": true,
+      "time_sec": 0.006,
+      "status": "PASS"
     }
   ]
 }
